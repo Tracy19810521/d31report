@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>进出口三十一部 · 2026年1-7月分析及H2工作方向</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#1a1a2e; --ink2:#2d2d4e; --paper:#f8f6f0;
+    --accent:#1a6e5f; --accent2:#16a085; --green:#27ae60;
+    --blue:#2980b9; --muted:#7f8c8d; --border:#d5d0c5;
+    --warn:#f39c12; --card:#ffffff; --sec-bg:#f2ede4;
+    --danger:#c0392b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Noto Serif SC',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.75;}
+
+  /* HEADER */
+  .hdr{background:var(--ink);color:#fff;padding:36px 48px 28px;position:relative;overflow:hidden;}
+  .hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:rgba(22,160,133,.2);}
+  .hdr::after{content:'';position:absolute;bottom:-40px;left:35%;width:180px;height:180px;border-radius:50%;background:rgba(39,174,96,.1);}
+  .hdr-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:10px;}
+  .hdr h1{font-size:25px;font-weight:700;letter-spacing:-.5px;line-height:1.25;}
+  .hdr h1 span{color:#4ecdc4;}
+  .hdr-meta{margin-top:12px;display:flex;gap:18px;flex-wrap:wrap;font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.6);}
+  .hdr-meta b{color:rgba(255,255,255,.9);}
+  .hdr-badge{display:inline-block;background:rgba(22,160,133,.35);border:1px solid rgba(22,160,133,.55);border-radius:4px;padding:2px 10px;font-size:11px;letter-spacing:1px;margin-top:10px;font-family:'DM Mono',monospace;color:rgba(255,255,255,.85);}
+
+  /* LAYOUT */
+  .wrap{max-width:980px;margin:0 auto;padding:30px 18px 56px;}
+  .sec-hd{display:flex;align-items:center;gap:11px;margin:30px 0 15px;}
+  .sec-num{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--accent2);background:rgba(22,160,133,.1);border:1px solid rgba(22,160,133,.3);padding:3px 9px;border-radius:20px;letter-spacing:1px;}
+  .sec-hd h2{font-size:16px;font-weight:700;}
+  .hr{height:1px;background:var(--border);margin:22px 0;}
+
+  /* KPI */
+  .k4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+  .kc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:15px 14px;position:relative;overflow:hidden;}
+  .kc::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
+  .kc.g::before{background:var(--green);}
+  .kc.w::before{background:var(--warn);}
+  .kc.r::before{background:var(--danger);}
+  .kc.b::before{background:var(--blue);}
+  .kc.teal::before{background:var(--accent2);}
+  .klb{font-size:10.5px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:.4px;}
+  .kv{font-size:22px;font-weight:700;color:var(--ink);margin:4px 0 2px;line-height:1;}
+  .kv.g{color:var(--green);} .kv.r{color:var(--danger);} .kv.o{color:var(--warn);} .kv.teal{color:var(--accent2);}
+  .ks{font-size:11px;color:var(--muted);}
+  .ks b{color:var(--ink2);}
+
+  /* TABLE */
+  .tw{overflow-x:auto;margin-bottom:13px;}
+  table{width:100%;border-collapse:collapse;font-size:12px;}
+  thead th{background:var(--ink);color:rgba(255,255,255,.88);padding:8px 10px;text-align:center;font-weight:600;font-size:11px;white-space:nowrap;}
+  thead th:first-child{text-align:left;}
+  td{padding:7px 10px;text-align:center;border-bottom:1px solid #eee;font-family:'DM Mono',monospace;font-size:11.5px;}
+  td:first-child{text-align:left;font-family:'Noto Serif SC',serif;font-size:12px;}
+  tr:hover td{background:#f9f7f2;}
+  tr.sub td{background:var(--sec-bg);font-weight:700;}
+  tr.tot td{background:var(--ink);color:#fff;font-weight:700;}
+  tr.hl7 td{background:#f0fffb;}
+
+  .t{display:inline-block;padding:2px 7px;border-radius:12px;font-size:10px;font-weight:600;font-family:'DM Mono',monospace;white-space:nowrap;}
+  .tg{background:#d5f5e3;color:#1e8449;} .tr{background:#fde8e8;color:#c0392b;}
+  .to{background:#fef3cd;color:#b7770d;} .tb{background:#d6eaf8;color:#1a5276;}
+  .tteal{background:#d0f0ee;color:#0e6e63;}
+
+  /* CARDS */
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+  .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:15px 17px;}
+  .card h4{font-size:12.5px;font-weight:700;color:var(--ink2);margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid var(--border);}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle;}
+
+  /* ALERT */
+  .al{border-left:4px solid;border-radius:0 8px 8px 0;padding:11px 15px;margin:11px 0;font-size:12px;line-height:1.65;}
+  .alr{border-color:var(--danger);background:#fff5f5;color:#7b241c;}
+  .alg{border-color:var(--green);background:#f0fff4;color:#1e6a3a;}
+  .alo{border-color:var(--warn);background:#fffbf0;color:#7d6608;}
+  .alb{border-color:var(--blue);background:#eaf4fb;color:#154360;}
+  .alteal{border-color:var(--accent2);background:#f0fffe;color:#0e6e63;}
+  .al b{font-weight:700;}
+
+  /* PERCAP BLOCK */
+  .pcb{background:var(--ink);color:#fff;border-radius:12px;padding:22px 24px;margin:15px 0;}
+  .pct{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:16px;}
+  .pcg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .pci{text-align:center;}
+  .pcn{font-family:'DM Mono',monospace;font-size:28px;font-weight:700;line-height:1;}
+  .pcn.tl{color:#4ecdc4;} .pcn.o{color:#f0a500;} .pcn.r{color:#e87272;} .pcn.b{color:#7dc8f0;}
+  .pcl{font-size:11px;color:rgba(255,255,255,.52);margin-top:5px;}
+  .pcs{font-size:10px;color:rgba(255,255,255,.35);margin-top:2px;font-family:'DM Mono',monospace;}
+  .pcnote{margin-top:13px;padding-top:11px;border-top:1px solid rgba(255,255,255,.12);font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.65;}
+
+  /* BAR */
+  .blist{display:flex;flex-direction:column;gap:9px;}
+  .bitem{display:flex;align-items:center;gap:8px;}
+  .bname{width:100px;font-size:11px;color:var(--ink2);flex-shrink:0;text-align:right;}
+  .btrack{flex:1;height:13px;background:#ece9e2;border-radius:6px;overflow:hidden;}
+  .bfill{height:100%;border-radius:6px;}
+  .bnum{width:96px;text-align:right;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);flex-shrink:0;}
+
+  /* COMPARE */
+  .cmp{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin:9px 0;background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+  .cmpl{padding:14px 17px;background:#f0fffe;}
+  .cmpr{padding:14px 17px;background:#fff5f5;text-align:right;}
+  .cmpm{padding:0 13px;font-size:18px;color:var(--border);font-family:'DM Mono',monospace;}
+  .cmplb{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .cmpv{font-size:19px;font-weight:700;margin:3px 0;}
+  .cmps{font-size:11px;color:var(--muted);}
+
+  /* DIRECTION */
+  .dg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-bottom:14px;}
+  .dc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;position:relative;}
+  .dn{font-family:'DM Mono',monospace;font-size:28px;font-weight:500;color:rgba(26,26,46,.06);position:absolute;top:9px;right:12px;line-height:1;}
+  .dtag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;border-radius:10px;margin-bottom:7px;display:inline-block;}
+  .dc h4{font-size:12.5px;font-weight:700;margin-bottom:7px;color:var(--ink);}
+  .dc ul{padding-left:13px;font-size:11px;color:var(--ink2);line-height:1.8;}
+
+  .footer{text-align:center;font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;padding:18px 0 10px;border-top:1px solid var(--border);margin-top:32px;letter-spacing:.5px;}
+
+  @media(max-width:640px){
+    .k4{grid-template-columns:1fr 1fr;}
+    .g2,.g3,.dg{grid-template-columns:1fr;}
+    .pcg{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-label">狮丹努进出口第一分公司 · 内部管理分析</div>
+  <h1>进出口三十一部 · <span>2026年1–7月深度分析</span><br>Q1 / Q2 回顾 &amp; H2 工作方向</h1>
+  <div class="hdr-meta">
+    <span>数据截至 <b>2026年7月（维度总表0326版）</b></span>
+    <span>全年销售目标 <b>5,950万元</b></span>
+    <span>内部创汇目标 <b>900万美元</b></span>
+    <span>团队规模 <b>10.5人</b></span>
+  </div>
+  <div class="hdr-badge">全年人均创汇目标 · 85.7万美/人</div>
+</div>
+
+<div class="wrap">
+
+<!-- ══════ 01 总览 ══════ -->
+<div class="sec-hd"><span class="sec-num">01</span><h2>1–7月核心数据总览</h2></div>
+
+<div class="k4">
+  <div class="kc g"><div class="klb">Q1 销售（万元）</div><div class="kv g">962</div><div class="ks">25年同期808 &nbsp;<b>+19.0%</b></div></div>
+  <div class="kc g"><div class="klb">Q2 销售（万元）</div><div class="kv g">1,240</div><div class="ks">25年同期1,076 &nbsp;<b>+15.2%</b></div></div>
+  <div class="kc r"><div class="klb">7月 销售（万元）↘</div><div class="kv r">360</div><div class="ks">25年同期650 &nbsp;<b>−45.2% 骤降</b></div></div>
+  <div class="kc w"><div class="klb">1–7月累计销售</div><div class="kv o">2,562</div><div class="ks">全年目标进度 <b>43.1%</b></div></div>
+</div>
+<div class="k4">
+  <div class="kc g"><div class="klb">Q1 创汇（万美）</div><div class="kv g">137</div><div class="ks">25年同期115 &nbsp;<b>+19.0%</b></div></div>
+  <div class="kc g"><div class="klb">Q2 创汇（万美）</div><div class="kv g">177</div><div class="ks">25年同期154 &nbsp;<b>+15.2%</b></div></div>
+  <div class="kc r"><div class="klb">7月 创汇（万美）↘</div><div class="kv r">51</div><div class="ks">25年同期93 &nbsp;<b>−45.2% 骤降</b></div></div>
+  <div class="kc w"><div class="klb">1–7月累计创汇</div><div class="kv o">366</div><div class="ks">内部目标进度 <b>40.7%</b></div></div>
+</div>
+
+<div class="al alo">
+  <b>整体判断：</b>Q1、Q2均实现同比正增长（+19%、+15%），这是三十一部2026年最重要的积极成果，主要由 <b>Etam全面回流</b>驱动。但7月出现同比−45.2%的骤降，主因是2025年7月Cotton on曾有单月650万的高基数，而2026年Cotton on Men/Lady订单持续大幅萎缩未能弥补缺口。<b>1–7月累计进度仅40.7%，是全楼完成难度最高的部门</b>，H2压力极大。
+</div>
+
+<!-- 月度明细 -->
+<div class="tw">
+<table>
+  <thead><tr><th>月份</th><th>本月销售</th><th>25年同期</th><th>销售同比</th><th>本月创汇</th><th>25年同期</th><th>创汇同比</th><th>累计销售</th><th>累计创汇</th></tr></thead>
+  <tbody>
+    <tr><td>1月</td><td>411</td><td>318</td><td><span class="t tg">+29.6%</span></td><td>58.8</td><td>45.4</td><td><span class="t tg">+29.6%</span></td><td>411</td><td>58.8</td></tr>
+    <tr><td>2月</td><td>339</td><td>324</td><td><span class="t tg">+4.7%</span></td><td>48.4</td><td>46.2</td><td><span class="t tg">+4.7%</span></td><td>750</td><td>107.2</td></tr>
+    <tr><td>3月</td><td>212</td><td>167</td><td><span class="t tg">+26.8%</span></td><td>30.2</td><td>23.8</td><td><span class="t tg">+26.8%</span></td><td>962</td><td>137.4</td></tr>
+    <tr class="sub"><td><b>Q1小计</b></td><td><b>962</b></td><td>809</td><td><span class="t tg">+19.0%</span></td><td><b>137.4</b></td><td>115.4</td><td><span class="t tg">+19.0%</span></td><td>—</td><td>—</td></tr>
+    <tr><td>4月</td><td>339</td><td>526</td><td><span class="t tr">−35.5%</span></td><td>48.4</td><td>75.1</td><td><span class="t tr">−35.5%</span></td><td>1,301</td><td>185.9</td></tr>
+    <tr><td>5月</td><td>556</td><td>326</td><td><span class="t tg">+70.5%</span></td><td>79.4</td><td>46.6</td><td><span class="t tg">+70.5%</span></td><td>1,857</td><td>265.3</td></tr>
+    <tr><td>6月</td><td>345</td><td>225</td><td><span class="t tg">+53.6%</span></td><td>49.3</td><td>32.1</td><td><span class="t tg">+53.6%</span></td><td>2,202</td><td>314.5</td></tr>
+    <tr class="sub"><td><b>Q2小计</b></td><td><b>1,240</b></td><td>1,077</td><td><span class="t tg">+15.2%</span></td><td><b>177.1</b></td><td>153.8</td><td><span class="t tg">+15.2%</span></td><td>—</td><td>—</td></tr>
+    <tr class="hl7"><td><b>7月 ↘</b></td><td><b>360</b></td><td>650</td><td><span class="t tr">−45.2%</span></td><td><b>51.5</b></td><td>92.9</td><td><span class="t tr">−45.2%</span></td><td>2,562</td><td>366.0</td></tr>
+    <tr class="tot"><td><b>1–7月合计</b></td><td><b>2,562</b></td><td>2,541</td><td><span class="t tteal">+0.8%</span></td><td><b>366.0</b></td><td>363.0</td><td><span class="t tteal">+0.8%</span></td><td><b>2,562</b></td><td><b>366.0</b></td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="al alr"><b>7月骤降预警：</b>7月同比−45.2%，是H1正增长趋势的重大逆转。核心原因：2025年7月 Cotton on（Men+Supre合计）单月曾达~650万，而2026年Cotton on业务持续萎缩，Etam订单出货节奏无法即时填补缺口。这一信号意味着H2 Cotton on拖累将持续，Etam和Supre的订单节奏必须明显加速。</div>
+
+<div class="hr"></div>
+
+<!-- ══════ 02 人均创汇 ══════ -->
+<div class="sec-hd"><span class="sec-num">02</span><h2>人均创汇分析（三十一部 10.5人）</h2></div>
+
+<div class="pcb">
+  <div class="pct">Per Capita FX Performance · 进出口三十一部 · 10.5人</div>
+  <div class="pcg">
+    <div class="pci">
+      <div class="pcn o">85.7</div>
+      <div class="pcl">全年目标（万美/人）</div>
+      <div class="pcs">900万 ÷ 10.5人</div>
+    </div>
+    <div class="pci">
+      <div class="pcn b">34.9</div>
+      <div class="pcl">1–7月实际（万美/人）</div>
+      <div class="pcs">366万 ÷ 10.5人</div>
+    </div>
+    <div class="pci">
+      <div class="pcn r">40.7%</div>
+      <div class="pcl">目标完成进度</div>
+      <div class="pcs">按7/12月应达58.3%</div>
+    </div>
+    <div class="pci">
+      <div class="pcn r">50.9</div>
+      <div class="pcl">H2需人均完成（万美/人）</div>
+      <div class="pcs">534万 ÷ 10.5人</div>
+    </div>
+  </div>
+  <div class="pcnote">
+    ⚠️ 当前进度落后自然进度 <b style="color:#e87272;">17.6个百分点</b>（实际40.7% vs 应有58.3%）。H2（8–12月）需人均完成50.9万美，月均约10.2万美/人——而1–7月月均仅5.0万美/人，H2月度产出需翻倍。2025年全年三十一部创汇约737万美/约12人，人均约61.4万美，2026年目标85.7万美/人，提升幅度达 <b style="color:#f0a500;">+39.6%</b>，仍需Etam+Supre双线在H2持续爆发。
+  </div>
+</div>
+
+<div class="card">
+  <h4>月度人均创汇趋势（万美/人，10.5人）</h4>
+  <div class="tw">
+  <table>
+    <thead><tr><th>月份</th><th>26年人均</th><th>25年参考</th><th>差值</th><th>26年当月创汇</th><th>占全年目标</th></tr></thead>
+    <tbody>
+      <tr><td>1月</td><td>5.6</td><td>3.8</td><td><span class="t tg">+2.8</span></td><td>58.8万美</td><td>6.5%</td></tr>
+      <tr><td>2月</td><td>4.6</td><td>3.9</td><td><span class="t tg">+1.5</span></td><td>48.4万美</td><td>5.4%</td></tr>
+      <tr><td>3月</td><td>2.9</td><td>2.6</td><td><span class="t tg">+0.7</span></td><td>30.2万美</td><td>3.4%</td></tr>
+      <tr><td>4月</td><td>4.6</td><td>8.3</td><td><span class="t tr">−3.0</span></td><td>48.4万美</td><td>5.4%</td></tr>
+      <tr><td>5月</td><td>7.6</td><td>5.2</td><td><span class="t tg">+3.7</span></td><td>79.4万美</td><td>8.8%</td></tr>
+      <tr><td>6月</td><td>4.7</td><td>3.6</td><td><span class="t tg">+1.9</span></td><td>49.3万美</td><td>5.5%</td></tr>
+      <tr class="hl7"><td><b>7月 ↘</b></td><td><b>4.9</b></td><td>8.9</td><td><span class="t tr">−4.0</span></td><td><b>51.5万美</b></td><td>5.7%</td></tr>
+      <tr class="sub"><td><b>1–7月合计</b></td><td><b>34.9</b></td><td>30.3</td><td><span class="t tg">+4.6</span></td><td><b>366.0万美</b></td><td><b>40.7%</b></td></tr>
+      <tr><td>H2需完成（8–12月）</td><td><b>50.9</b></td><td>46.8</td><td><span class="t tr">+4.1↑需超越</span></td><td><b>534万美</b></td><td><b>59.3%</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="al alteal" style="font-size:11.5px;">
+    <b>关键节点：</b>2025年9月三十一部人均约8.7万美/人（10.5人基准）。2026年9月若能达到 <b>11万美/人</b>（115万美合计），将占H2剩余目标534万的22%。Etam秋冬系列集中出货是9月的核心驱动力。
+  </div>
+</div>
+
+<div class="hr"></div>
+
+<!-- ══════ 03 客户维度 ══════ -->
+<div class="sec-hd"><span class="sec-num">03</span><h2>客户维度拆解（H1数据；7月为部门级合计）</h2></div>
+
+<div class="g2">
+
+  <!-- Cotton On Men/Supre -->
+  <div class="card">
+    <h4><span class="dot" style="background:#c0392b;"></span>Cotton On Men / Lady / Supre — H1 −22.9% ⚠️</h4>
+    <div class="tw">
+    <table>
+      <thead><tr><th>月</th><th>26年销售</th><th>25年同期</th><th>同比</th><th>26年创汇</th></tr></thead>
+      <tbody>
+        <tr><td>1月</td><td>310</td><td>318</td><td><span class="t to">−2.3%</span></td><td>44.3万美</td></tr>
+        <tr><td>2月</td><td>192</td><td>324</td><td><span class="t tr">−40.8%</span></td><td>27.4万美</td></tr>
+        <tr><td>3月</td><td>132</td><td>167</td><td><span class="t tr">−21.2%</span></td><td>18.8万美</td></tr>
+        <tr class="sub"><td><b>Q1</b></td><td><b>634</b></td><td>809</td><td><span class="t tr">−21.6%</span></td><td><b>90.5万美</b></td></tr>
+        <tr><td>4月</td><td>210</td><td>441</td><td><span class="t tr">−52.4%</span></td><td>30.0万美</td></tr>
+        <tr><td>5月</td><td>336</td><td>326</td><td><span class="t tg">+3.0%</span></td><td>48.0万美</td></tr>
+        <tr><td>6月</td><td>191</td><td>201</td><td><span class="t to">−5.3%</span></td><td>27.2万美</td></tr>
+        <tr class="sub"><td><b>Q2</b></td><td><b>737</b></td><td>968</td><td><span class="t tr">−23.9%</span></td><td><b>105.2万美</b></td></tr>
+        <tr class="tot"><td><b>H1合计</b></td><td><b>1,370</b></td><td>1,777</td><td><span class="t tr">−22.9%</span></td><td><b>195.7万美</b></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="al alo" style="font-size:11.5px;margin-top:8px;">
+      Cotton on Men/Lady订单持续向GSB转移，H1缺口超400万元，且无明显反弹迹象。Supre（李佳妮负责）是H2能否逆转的关键变量——全年内部目标300万美，1月中仅下单94.7万（31.6%），Q3必须加速。
+    </div>
+  </div>
+
+  <!-- Etam -->
+  <div class="card">
+    <h4><span class="dot" style="background:#27ae60;"></span>Etam（Undiz + Etam主品牌）— H1 +563% ✅✅</h4>
+    <div class="tw">
+    <table>
+      <thead><tr><th>月</th><th>26年销售</th><th>25年同期</th><th>同比</th><th>26年创汇</th></tr></thead>
+      <tbody>
+        <tr><td>1月</td><td>101</td><td>0</td><td><span class="t tg">全新</span></td><td>14.4万美</td></tr>
+        <tr><td>2月</td><td>123</td><td>0</td><td><span class="t tg">全新</span></td><td>17.6万美</td></tr>
+        <tr><td>3月</td><td>80</td><td>0</td><td><span class="t tg">全新</span></td><td>11.4万美</td></tr>
+        <tr class="sub"><td><b>Q1</b></td><td><b>305</b></td><td>0</td><td><span class="t tg">从零起步</span></td><td><b>43.5万美</b></td></tr>
+        <tr><td>4月</td><td>116</td><td>85</td><td><span class="t tg">+37.4%</span></td><td>16.6万美</td></tr>
+        <tr><td>5月</td><td>140</td><td>0</td><td><span class="t tg">全新</span></td><td>20.0万美</td></tr>
+        <tr><td>6月</td><td>154</td><td>23</td><td><span class="t tg">+562%</span></td><td>22.1万美</td></tr>
+        <tr class="sub"><td><b>Q2</b></td><td><b>410</b></td><td>108</td><td><span class="t tg">+280%</span></td><td><b>58.7万美</b></td></tr>
+        <tr class="tot"><td><b>H1合计</b></td><td><b>715</b></td><td>108</td><td><span class="t tg">+563%</span></td><td><b>102.2万美</b></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="al alg" style="font-size:11.5px;margin-top:8px;">
+      Etam是2026年三十一部最核心的增量来源。Q2体量（410万）已超Q1（305万）并持续提升，Undiz安徽工厂珊瑚绒爆款和有机棉订单双线并进，全年目标300万美（官方250万），H1已达102万（34%），仍需大力追赶。
+    </div>
+  </div>
+
+</div>
+
+<!-- NAR -->
+<div class="card" style="margin-bottom:14px;">
+  <h4><span class="dot" style="background:#8e44ad;"></span>NAR — 新客，小单高频模式，H1 创汇 16.7万美</h4>
+  <div class="tw">
+  <table>
+    <thead><tr><th>月</th><th>26年销售</th><th>创汇</th><th>特点</th></tr></thead>
+    <tbody>
+      <tr><td>1月</td><td>0</td><td>0</td><td>—</td></tr>
+      <tr><td>2月</td><td>24.2</td><td>3.5万美</td><td>首单到货</td></tr>
+      <tr><td>3月</td><td>0</td><td>0</td><td>—</td></tr>
+      <tr><td>4月</td><td>12.9</td><td>1.8万美</td><td>—</td></tr>
+      <tr><td>5月</td><td>79.9</td><td>11.4万美</td><td>⭐ 5月爆发</td></tr>
+      <tr><td>6月</td><td>0</td><td>0</td><td>—</td></tr>
+      <tr class="tot"><td><b>H1合计</b></td><td><b>116.9</b></td><td><b>16.7万美</b></td><td>全新客户，25年无</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="al alb" style="font-size:11.5px;">
+    NAR是高频小单模式（160个PO/年，每批~100件），H1贡献16.7万美，出货节奏不均匀。全年目标50万美（Jessy组MN线+MJA线），Q3需在掌控小单成本的前提下提升毛利，防止高频小单侵蚀效益工资。
+  </div>
+</div>
+
+<div class="al alr"><b>🔴 Myer（新客，Jessy组）：截至6月累计收入 0 元。</b>内部目标50万美，需H2落地首单，建议设定Q3底线：能否在9月前拿到样品确认。若无实质进展，50万美目标需重新测算对全年达成的影响。</div>
+
+<div class="hr"></div>
+
+<!-- ══════ 04 内部目标进度 ══════ -->
+<div class="sec-hd"><span class="sec-num">04</span><h2>内部目标下单进度（万美元，截至1月15日）</h2></div>
+
+<div class="blist">
+  <div class="bitem"><span class="bname">Etam-Undiz</span><div class="btrack"><div class="bfill" style="width:49.6%;background:#27ae60;"></div></div><span class="bnum" style="color:#27ae60;">89.2/180 · 49.6% ✅</span></div>
+  <div class="bitem"><span class="bname">Etam-主品牌</span><div class="btrack"><div class="bfill" style="width:37.9%;background:#f39c12;"></div></div><span class="bnum" style="color:#f39c12;">45.5/120 · 37.9% ⚠️</span></div>
+  <div class="bitem"><span class="bname">Supre</span><div class="btrack"><div class="bfill" style="width:31.6%;background:#f39c12;"></div></div><span class="bnum" style="color:#f39c12;">94.7/300 · 31.6% ⚠️</span></div>
+  <div class="bitem"><span class="bname">COG Lady</span><div class="btrack"><div class="bfill" style="width:16.7%;background:#c0392b;"></div></div><span class="bnum" style="color:#c0392b;">20/120 · 16.7% 🔴</span></div>
+  <div class="bitem"><span class="bname">COG Men</span><div class="btrack"><div class="bfill" style="width:3.8%;background:#c0392b;"></div></div><span class="bnum" style="color:#c0392b;">3/80 · 3.8% 🔴</span></div>
+  <div class="bitem"><span class="bname">NAR-MN</span><div class="btrack"><div class="bfill" style="width:0.5%;background:#c0392b;"></div></div><span class="bnum" style="color:#c0392b;">0/35 · 0% 🔴</span></div>
+  <div class="bitem"><span class="bname">Myer-新客</span><div class="btrack"><div class="bfill" style="width:0.5%;background:#999;"></div></div><span class="bnum" style="color:#999;">0/50 · 0% 🔴</span></div>
+  <div class="bitem"><span class="bname">NAR-MJA</span><div class="btrack"><div class="bfill" style="width:0.5%;background:#999;"></div></div><span class="bnum" style="color:#999;">0/15 · 0% 🔴</span></div>
+  <div class="bitem" style="margin-top:8px;padding-top:8px;border-top:1px solid #ddd;">
+    <span class="bname" style="font-weight:700;">合计</span>
+    <div class="btrack"><div class="bfill" style="width:28%;background:#2980b9;"></div></div>
+    <span class="bnum" style="color:#2980b9;font-weight:700;">252.4/900 · 28.0%</span>
+  </div>
+</div>
+
+<div class="al alr" style="margin-top:13px;"><b>严重预警：</b>整体下单进度仅28%，是全楼最低。COG Men仅3.8%（3万），COG Lady 16.7%（20万），Myer/NAR-MJA/NAR-MN 三条线均为0。Jessy组（负责COG+NAR+Myer）合计目标285万美，1月中下单仅23万（8.1%），全年目标实现高度依赖Q3新客户突破和COG订单的意外回补。</div>
+
+<div class="hr"></div>
+
+<!-- ══════ 05 H2缺口 ══════ -->
+<div class="sec-hd"><span class="sec-num">05</span><h2>H2目标缺口测算</h2></div>
+
+<div class="cmp">
+  <div class="cmpl"><div class="cmplb">2025年 H2 销售实绩</div><div class="cmpv" style="color:#16a085;">3,274 <span style="font-size:12px;color:#999;">万元</span></div><div class="cmps">7–12月合计（三十一部）</div></div>
+  <div class="cmpm">→</div>
+  <div class="cmpr"><div class="cmplb">2026年 剩余目标（8–12月）</div><div class="cmpv" style="color:#c0392b;">3,388 <span style="font-size:12px;color:#999;">万元</span></div><div class="cmps">较去年H2需 <b style="color:#c0392b;">+3.5%</b>（看似不多）</div></div>
+</div>
+<div class="cmp">
+  <div class="cmpl"><div class="cmplb">2025年 H2 创汇实绩</div><div class="cmpv" style="color:#16a085;">468 <span style="font-size:12px;color:#999;">万美</span></div><div class="cmps">7–12月合计（三十一部）</div></div>
+  <div class="cmpm">→</div>
+  <div class="cmpr"><div class="cmplb">2026年 剩余创汇（8–12月）</div><div class="cmpv" style="color:#c0392b;">534 <span style="font-size:12px;color:#999;">万美</span></div><div class="cmps">人均需再完成 <b style="color:#c0392b;">50.9万美/人</b></div></div>
+</div>
+
+<div class="al alo" style="margin-top:10px;">
+  <b>注意：</b>销售缺口（+3.5%）看似小，但<b>结构上完全不同</b>——2025年H2 Cotton on贡献了大量销售，2026年这部分在持续萎缩，必须由 Etam 秋冬系列 + Supre + NAR 三线来填补，且创汇目标（534万美）高于去年H2实绩（468万美）14.2%，挑战真实存在。
+</div>
+
+<div class="card" style="margin-top:13px;">
+  <h4>2025年H2月度参考 vs 2026年8–12月目标估算</h4>
+  <div class="tw">
+  <table>
+    <thead><tr><th>月份</th><th>25年实销（万元）</th><th>25年创汇（万美）</th><th>25年人均创汇</th><th>26年目标销售（估）</th><th>26年目标人均（估）</th></tr></thead>
+    <tbody>
+      <tr><td>8月</td><td>423</td><td>60.4</td><td>5.8万/人</td><td>~550</td><td>~7.0万/人</td></tr>
+      <tr class="hl7"><td><b>9月 ⭐ 旺季</b></td><td><b>717</b></td><td><b>102.5</b></td><td><b>9.8万/人</b></td><td><b>~900</b></td><td><b>~11.0万/人</b></td></tr>
+      <tr><td>10月</td><td>656</td><td>93.7</td><td>8.9万/人</td><td>~700</td><td>~8.5万/人</td></tr>
+      <tr><td>11月</td><td>560</td><td>80.1</td><td>7.6万/人</td><td>~600</td><td>~7.0万/人</td></tr>
+      <tr><td>12月</td><td>267</td><td>38.2</td><td>3.6万/人</td><td>~350</td><td>~4.0万/人</td></tr>
+      <tr class="tot"><td><b>8–12月合计</b></td><td><b>2,623</b></td><td><b>374.9</b></td><td><b>35.7万/人</b></td><td><b>~3,100</b></td><td><b>~37.0万/人</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div class="hr"></div>
+
+<!-- ══════ 06 H2方向 ══════ -->
+<div class="sec-hd"><span class="sec-num">06</span><h2>H2（8–12月）工作方向</h2></div>
+
+<div class="dg">
+  <div class="dc">
+    <div class="dn">01</div>
+    <div class="dtag" style="background:#d5f5e3;color:#1e8449;">核心引擎</div>
+    <h4>Etam 秋冬全力推进</h4>
+    <ul>
+      <li>Undiz秋冬系列8月前完成样品确认，锁定出货节奏</li>
+      <li>有机棉订单Q3争取落地，补充珊瑚绒外的品类</li>
+      <li>Etam主品牌：从45.5万追赶至120万目标</li>
+      <li>9月目标Etam整体出货不低于150万元（Etam贡献13万美以上）</li>
+    </ul>
+  </div>
+  <div class="dc">
+    <div class="dn">02</div>
+    <div class="dtag" style="background:#fef3cd;color:#b7770d;">必须追赶</div>
+    <h4>Supre — 追赶至全年目标</h4>
+    <ul>
+      <li>H1下单94.7/300万（31.6%），Q3是最后追赶窗口</li>
+      <li>李佳妮主攻Supre fashion爆款模式，复制25年BEST SELLER路径</li>
+      <li>Q3下单目标：再追加80万美，累计超过170万</li>
+      <li>提前3个月开始H2季节开发，避免与25年同期落后局面重演</li>
+    </ul>
+  </div>
+  <div class="dc">
+    <div class="dn">03</div>
+    <div class="dtag" style="background:#fde8e8;color:#c0392b;">止损稳守</div>
+    <h4>COG Men/Lady — 控制流失</h4>
+    <ul>
+      <li>两线H1累计仅23万（目标200万），基本无法追回</li>
+      <li>策略转向：保住现有订单，防止进一步流失至GSB</li>
+      <li>H2底线目标：两线合计达到50万美</li>
+      <li>分析GSB竞争原因，向客人提供差异化价值方案</li>
+    </ul>
+  </div>
+  <div class="dc">
+    <div class="dn">04</div>
+    <div class="dtag" style="background:#e8d5f5;color:#6c3483;">新客培育</div>
+    <h4>Myer — 落地首单</h4>
+    <ul>
+      <li>H1零收入，H2以"Q3完成样品确认"为阶段里程碑</li>
+      <li>目标：年内落地首单，金额不设过高预期（10万美即阶段成功）</li>
+      <li>结合COUNTRY ROAD经验，走精品小批量切入路径</li>
+      <li>50万美全年目标需评估是否移至2027年</li>
+    </ul>
+  </div>
+  <div class="dc">
+    <div class="dn">05</div>
+    <div class="dtag" style="background:#d6eaf8;color:#1a5276;">效益管控</div>
+    <h4>NAR — 控制成本提毛利</h4>
+    <ul>
+      <li>高频小单（100件/PO）模式须控制效益工资侵蚀</li>
+      <li>全年目标50万美，H2需完成约33万美</li>
+      <li>批次合并发货，降低操作成本</li>
+      <li>毛利率目标不低于15%，低于此线的PO谨慎接单</li>
+    </ul>
+  </div>
+  <div class="dc">
+    <div class="dn">06</div>
+    <div class="dtag" style="background:#e8f8f5;color:#1a6e5f;">人均达标</div>
+    <h4>H2人均创汇路径（10.5人）</h4>
+    <ul>
+      <li>H2人均目标 <b>50.9万美/人</b>，月均约10.2万</li>
+      <li>9月决战：目标人均~11万美（全年最高）</li>
+      <li>Vivian组（Etam）：H2承担主力，目标200万美+</li>
+      <li>李佳妮（Supre）：H2需完成约140万美</li>
+      <li>Jessy组：COG止损+NAR稳定+Myer破冰</li>
+    </ul>
+  </div>
+</div>
+
+<div class="hr"></div>
+
+<!-- ══════ 07 结论 ══════ -->
+<div class="sec-hd"><span class="sec-num">07</span><h2>风险与综合结论</h2></div>
+
+<div class="g2">
+  <div class="card">
+    <h4>⚠️ 核心风险</h4>
+    <div class="al alr" style="font-size:11.5px;margin-bottom:8px;"><b>风险1：进度严重滞后，全年目标高难</b><br>1–7月进度仅40.7%，落后自然进度17.6pp，H2须完成全年目标59.3%，历史上从未有此记录。</div>
+    <div class="al alo" style="font-size:11.5px;margin-bottom:8px;"><b>风险2：COG 持续失血，无回补预期</b><br>H1缺口超400万元，且2条产线合计仅下单23万（目标200万），全年该方向将大幅低于目标。</div>
+    <div class="al alr" style="font-size:11.5px;"><b>风险3：Jessy组全线低迷</b><br>COG+NAR+Myer三条线合计目标285万美，下单仅23万（8.1%），H2若无突破将成全部门短板。</div>
+  </div>
+  <div class="card">
+    <h4>✅ 正向支撑</h4>
+    <div class="al alg" style="font-size:11.5px;margin-bottom:8px;"><b>亮点1：Etam回流确立，势头强劲</b><br>H1从0到715万元、创汇102万美，Undiz珊瑚绒爆款+有机棉多线并进，H2有能力持续放量。</div>
+    <div class="al alg" style="font-size:11.5px;margin-bottom:8px;"><b>亮点2：Q1/Q2连续正增长</b><br>连续两个季度同比正增长（+19%、+15%），证明Etam的量已足以对冲COG萎缩，结构在好转。</div>
+    <div class="al alb" style="font-size:11.5px;"><b>亮点3：Supre有爆款潜力</b><br>李佳妮负责的Supre 25年已验证爆款模式（下单94.7万），H2若能复制或扩大，将带来显著增量。</div>
+  </div>
+</div>
+
+</div><!-- wrap -->
+
+<div class="footer">
+  数据来源：2026年维度总表（0326版）· 2025年维度总表（1202版）· 内部目标调整表 · 三十一部 10.5人 · 单位：万元人民币 / 万美元<br>
+  本报告供内部管理决策参考 · 制表 2026.04
+</div>
+
+</body>
+</html>
